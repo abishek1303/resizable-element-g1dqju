@@ -1,31 +1,36 @@
+
 <div
-  class="rectangle"
-  [ngStyle]="style"
   mwlResizable
-  [validateResize]="validate"
+  [ngStyle]="style"
   [enableGhostResize]="true"
-  [resizeSnapGrid]="{ left: 1, right: 1 }"
   (resizeEnd)="onResizeEnd($event)"
+  [resizeEdges]="{ bottom: false, right: true, left: false, top: false }"
+  style="width: 60vw; height: 100vh; border: 1px solid black;"
 >
-  Map PlaceHolder
   <div
-    class="resize-handle-top"
-    mwlResizeHandle
-    [resizeEdges]="{ top: true }"
-  ></div>
+    style="height: 50%; min-height: 25%; width: 100%;background: lightblue; margin-bottom:auto;  cursor: col-resize;"
+    class="rectangle"
+    [ngStyle]="chartStyle"
+    [enableGhostResize]="true"
+    mwlResizable
+    (resizeEnd)="onChartResizeEnd($event)"
+    [resizeEdges]="{ bottom: true, right: false, left: false, top: false }"
+  >
+    Map PlaceHolder
+  </div>
   <div
-    class="resize-handle-left"
-    mwlResizeHandle
-    [resizeEdges]="{ left: true }"
-  ></div>
-  <div
-    class="resize-handle-right"
-    mwlResizeHandle
-    [resizeEdges]="{ right: true }"
-  ></div>
-  <div
-    class="resize-handle-bottom"
-    mwlResizeHandle
-    [resizeEdges]="{ bottom: true }"
-  ></div>
+    [enableGhostResize]="true"
+    mwlResizable
+    [ngStyle]="mapStyle"
+    (resizeEnd)="onMapResizeEnd($event)"
+    style="height: 50%; width: 100%;background: lightgreen;"
+    class="rectangle"
+    [resizeEdges]="{ bottom: false, right: true, left: false, top: true }"
+  >
+    chart PlaceHolder
+  </div>
 </div>
+<div style="width: 60vw; height: 100vh; border: 1px solid black;">
+
+</div>
+
