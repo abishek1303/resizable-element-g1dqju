@@ -5,10 +5,10 @@
   [enableGhostResize]="true"
   (resizeEnd)="onResizeEnd($event)"
   [resizeEdges]="{ bottom: false, right: true, left: false, top: false }"
-  style="width: 60vw; height: 100vh; border: 1px solid black;"
+  style="width: 60vw; max-width: 80vw; min-width:20vw; height: 100vh; border-right: 2px double gray;"
 >
   <div
-    style="height: 50%; min-height: 25%; width: 100%;background: lightblue; margin-bottom:auto;  cursor: col-resize;"
+    style="height: 50%; min-height: 25%; width: 100%;background: lightblue; margin-bottom:auto;  border-bottom: 2px double gray;  cursor: col-resize;"
     class="rectangle"
     [ngStyle]="chartStyle"
     [enableGhostResize]="true"
